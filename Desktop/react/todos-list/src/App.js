@@ -5,6 +5,7 @@ import { Footer } from "./MyComponents/Footer";
 import { AddTodo } from "./MyComponents/AddTodo";
 import { About } from "./MyComponents/About";
 import React, { useState, useEffect } from 'react';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,6 +13,7 @@ import {
 } from "react-router-dom";
 
 function App() {
+
   let initTodo;
   if (localStorage.getItem("todos") === null) {
     initTodo = [];
@@ -52,6 +54,18 @@ function App() {
     console.log(myTodo);
   }
 
+  const [mode, setMode] = useState('dark');
+  const toggleMode = () => {
+    if (mode === 'light') {
+      setMode('dark');
+      document.body.style.backgroundColor = 'black';
+    }
+    else {
+      setMode('light');
+      document.body.style.backgroundColor = 'light';
+    }
+
+  }
   const [todos, setTodos] = useState(initTodo);
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -60,7 +74,7 @@ function App() {
   return (
     <>
       {/* <Router> */}
-      <Header title="My Todos List" searchBar={false} />
+      <Header title="My Todos List" searchBar={false} mode={mode} toggleMode={toggleMode} />
       <Routes>
         <Route exact path="/"
 

@@ -1,10 +1,10 @@
 import React from 'react'
-
+import './About.css'
 export const About = () => {
     return (
-        <div>
-            This is an about component 
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum corporis odio, nesciunt sed eveniet, nemo amet, dignissimos magnam itaque ipsam possimus. Inventore vitae, perferendis harum quas cupiditate adipisci repellendus tempore asperiores at consequatur quos?</p>
+        <div className='about'>
+            <img src="https://i.ibb.co/2ysqLgV/carbon-1.png" alt="carbon-1" border="0"></img>
+
         </div>
     )
 }

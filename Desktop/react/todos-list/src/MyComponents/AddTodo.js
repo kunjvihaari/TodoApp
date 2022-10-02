@@ -7,7 +7,7 @@ export const AddTodo = ({ addTodo }) => {
 
     const submit = (e) => {
         e.preventDefault();
-        if ((!title && desc) || (title && !desc)) {
+        if ((!title && desc) || (title && !desc) || (!title && !desc)) {
             alert("Title or Description cannot be blank");
         }
         else {
